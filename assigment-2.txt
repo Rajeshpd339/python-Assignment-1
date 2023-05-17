@@ -1,0 +1,88 @@
+Q1. How do you comment code in Python? What are the different types of comments?
+Ans:-Comments in Python are identified with a hash symbol, #, 
+there are three types of commnets in puython
+single-line, multi-line, and docstring comments.
+
+Q2. What are variables in Python? How do you declare and assign values to variables?
+Ans:- A Python variable is a symbolic name that is a reference or pointer to an object.
+example:- a=6 where a is varaiable name and 6 is value
+
+Q3. How do you convert one data type to another in Python?
+Ans:- conversion of one data type to another data types is known as typecasting
+we can convert one data types to another data types in following way.
+a=6
+print(type(a))
+b=str(a)
+print(type(b))
+
+<class 'int'>
+<class 'str'>
+
+Q4. How do you write and execute a Python script from the command line?
+Ans:- To write and execute a Python script from the command line, we can follow these steps:
+1.Open a text editor and create a new file. Save it with a .py extension
+2. we will Write Python code inside the file. and save the file after writing our code
+3.Open a command prompt or terminal window.Navigate to the directory where our Python script is located using the cd command.
+4 followed by the name of your script file. we will run the program
+
+cd Documents
+python script.py
+python3 script.py
+
+Q5. Given a list my_list = [1, 2, 3, 4, 5], write the code to slice the list and obtain the sub-list [2, 3].
+Ans:-
+my_list = [1, 2, 3, 4, 5]
+print(my_list[1:3:1])
+
+Q6. What is a complex number in mathematics, and how is it represented in Python?
+Ans:- 
+In mathematics, a complex number is a number that can be expressed in the form "a + bi", where "a" and "b" are real numbers, and "i" represents the imaginary unit. 
+in pyhton we are represting the a+bj  whare a is real and bj is imginary example 3+6j
+
+Q7. What is the correct way to declare a variable named age and assign the value 25 to it?
+
+age=int(input("enter your age ")
+print("age=",age)
+
+output
+
+enter your age  25
+age=25
+
+Q8. Declare a variable named price and assign the value 9.99 to it. What data type does this variable
+belong to?
+ans:-
+price=eval(input("enter your price "))
+print("price=", price)
+print(type(price))
+.....o/p.....
+enter your price 9.99
+price= 9.99
+<class 'float'>
+
+Q9. Create a variable named name and assign your full name to it as a string. How would you print the
+value of this variable?
+
+ans:-
+name=input("enter your full name ")
+print("my full name is",name)
+print(type(name))
+.....o/p......
+
+enter your full name Rajesh Prasad
+my full name is Rajesh Prasad
+<class 'str'>
+
+Q10. Given the string "Hello, World!", extract the substring "World".
+ans:-
+s=input("enter the string ")
+print(s[6:])
+
+........o/p.......
+enter the string hello world
+world
+
+Q11. Create a variable named "is_student" and assign it a boolean value indicating whether you are
+currently a student or not.
+
+is_student
