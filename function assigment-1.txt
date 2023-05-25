@@ -1,0 +1,131 @@
+Q1. Which keyword is used to create a function? Create a function to return a list of odd numbers in the
+range of 1 to 25.
+ans:- def key word we are using for create function.
+program:_
+def odd_number(n):
+    for i in range(n+1):
+        if i%2!=0:
+            print(i, end=" ")   
+obj=odd_number(25)
+
+ Q2. Why *args and **kwargs is used in some functions? Create a function each for *args and **kwargs
+to demonstrate their use.   
+
+ans:-*agrgs is used for pass the arguments in the function according to the user we can pass the arguments how many we want.
+
+example:-
+
+def raj(*args):
+    return args
+raj(2,3,4,35,46)
+....o/p......
+(2, 3, 4, 35, 46)
+
+**kwargs is used for pass the arguments in the function in from of key and pair or if the result need in the from of key and pair. 
+exmple:-
+
+def raj(**kwargs):
+    return kwargs
+raj(a=[2,2,3,4],b="raj", c=2.34)
+
+.....o/p....
+{'a': [2, 2, 3, 4], 'b': 'raj', 'c': 2.34}
+
+Q3. What is an iterator in python? Name the method used to initialise the iterator object and the method
+used for iteration. Use these methods to print the first five elements of the given list [2, 4, 6, 8, 10, 12, 14,
+16, 18, 20].
+
+ans:- iterator is defind as a we can go next and next and then value can iterate one by one.
+
+def raj(l):
+    print(l[:5])
+raj([2, 4, 6, 8, 10, 12, 14,16, 18, 20])
+.....o/p.......
+[2, 4, 6, 8, 10]
+
+Q4. What is a generator function in python? Why yield keyword is used? Give an example of a generator
+function.
+ans:- generator function is specail type function that is used for oprimised the memory. it's work generating the element and print the element so that is save the memory location 
+
+yield are used for the return the value till loop is not terminated.
+
+example:
+def raj():
+    l=[3,4,5,67,68,9,0,9]
+    for i in range(len(l)):
+        if i%2==0:
+            yield i
+  
+  Q5. Create a generator function for prime numbers less than 1000. Use the next() method to print the
+first 20 prime numbers.
+
+ans:-
+
+def prime_generator():
+    primes = []
+    num = 2
+    while num < 1000:
+        is_prime = True
+        for prime in primes:
+            if num % prime == 0:
+                is_prime = False
+                break
+        if is_prime:
+            primes.append(num)
+            yield num
+        num += 1
+prime_gen = prime_generator()
+for _ in range(20):
+    prime = next(prime_gen)
+    print(prime,end=" ")
+
+.....o/p......
+2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 
+
+Q6. Write a python program to print the first 10 Fibonacci numbers using a while loop.
+    
+  def fibo_series(n):
+    a,b=0,1
+    for i in range(n):
+        yield a
+        a,b=b,a+b
+for i in fibo_series(10):
+    print(i,end=" ")
+......o/p........
+0 1 1 2 3 5 8 13 21 34 
+
+
+Q7. Write a List Comprehension to iterate through the given string: ‘pwskills’.
+Expected output: ['p', 'w', 's', 'k', 'i', 'l', 'l', 's']
+
+ans:
+
+string = 'pwskills'
+result = [char for char in string]
+print(result)
+.....o/p......
+
+['p', 'w', 's', 'k', 'i', 'l', 'l', 's']
+
+
+Q8. Write a python program to check whether a given number is Palindrome or not using a while loop.
+def is_palindrome(number):
+    number_str = str(number)
+    left = 0
+    right = len(number_str) - 1
+    while left < right:
+        if number_str[left] != number_str[right]:
+            return False
+        left += 1
+        right -= 1
+    return True
+num = int(input("Enter a number: "))
+if is_palindrome(num):
+    print(f"{num} is a palindrome!")
+else:
+    print(f"{num} is not a palindrome!")
+.......o/p......
+Enter a number: 121
+121 is a palindrome!
+
+
