@@ -1,0 +1,139 @@
+Q1. Explain Class and Object with respect to Object-Oriented Programming. Give a suitable example.
+ans:
+In object-oriented programming (OOP), a class is a blueprint or a template that defines the structure and behavior of objects. It acts as a blueprint for creating individual instances, known as objects, which are the actual entities that exist in memory and can interact with each other.
+
+A class defines the attributes (data) and methods (functions) that an object will possess. Attributes represent the state or characteristics of an object, while methods represent the behaviors or actions that an object can perform.
+
+example:
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+
+    def calculate_area(self):
+        return 3.14 * self.radius ** 2
+circle1 = Circle(5)
+circle2 = Circle(3)
+
+print(circle1.radius)           
+print(circle2.radius)           
+print(circle1.calculate_area()) 
+print(circle2.calculate_area())
+...........o/p.........
+5
+3
+78.5
+28.26
+
+
+Q2. Name the four pillars of OOPs.
+ans:
+1.Encapsulation:
+2.Inheritance:
+3.Polymorphism:
+4.Abstraction: 
+
+Q3. Explain why the __init__() function is used. Give a suitable example.
+ans: The __init__() function in Python is a special method (also known as a constructor) that is automatically called when an object of a class is created. It is used to initialize the attributes of the object and perform any necessary setup or initialization tasks.
+
+program:
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def display_info(self):
+        print(f"Name: {self.name}")
+        print(f"Age: {self.age}")
+
+
+person1 = Person("Alice", 25)
+person1.display_info()
+
+........o/p......
+Name: Alice
+Age: 25
+
+
+Q4. Why self is used in OOPs?
+ans:- In object-oriented programming (OOP), self is a convention used to refer to the instance of a class within its own methods.
+
+Q5. What is inheritance? Give an example for each type of inheritance.
+
+ans:
+Inheritance is a fundamental concept in object-oriented programming (OOP) that allows a class to inherit properties and behaviors from another class.
+
+1.Single Inheritance: Single inheritance involves a child class inheriting properties and behaviors from a single parent class.
+example:
+class Animal:
+    def eat(self):
+        print("Animal is eating...")
+
+
+class Dog(Animal):
+    def bark(self):
+        print("Dog is barking...")
+
+
+dog = Dog()
+dog.eat()  
+dog.bark()
+.........o/p......
+Animal is eating
+Dog is barking...
+
+2. Multiple Inheritance: Multiple inheritance involves a child class inheriting properties and behaviors from multiple parent classes.
+example:
+class Flyer:
+    def fly(self):
+        print("Flying...")
+
+
+class Swimmer:
+    def swim(self):
+        print("Swimming...")
+
+
+class Duck(Flyer, Swimmer):
+    def quack(self):
+        print("Quack!")
+
+
+duck = Duck()
+duck.fly()   
+duck.swim() 
+duck.quack() 
+............o/p.........
+Flying...
+Swimming...
+Quack!
+
+3. Multilevel Inheritance: Multilevel inheritance involves a child class inheriting properties and behaviors from a parent class, and that parent class further inheriting from another parent class.
+example:
+class Animal:
+    def eat(self):
+        print("Animal is eating...")
+
+
+class Dog(Animal):
+    def bark(self):
+        print("Dog is barking...")
+
+
+class Labrador(Dog):
+    def fetch(self):
+        print("Labrador is fetching...")
+
+
+labrador = Labrador()
+labrador.eat()    
+labrador.bark()   
+labrador.fetch()  
+.................o/p..........
+Animal is eating...
+Dog is barking...
+Labrador is fetching...
+
+
+
+
+
