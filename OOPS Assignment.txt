@@ -1,0 +1,129 @@
+Q1.Create a vehicle class with an init method having instance variables as name_of_vehicle, max_speed
+and average_of_vehicle.
+
+ANS:-
+
+class Vehicle:
+    def __init__(self, name_of_vehicle, max_speed, average_of_vehicle):
+        self.name_of_vehicle = name_of_vehicle
+        self.max_speed = max_speed
+        self.average_of_vehicle = average_of_vehicle
+car = Vehicle("Car", 200, 50)
+
+print(car.name_of_vehicle)       
+print(car.max_speed)             
+print(car.average_of_vehicle)    
+
+......O/P...........
+ Car  
+200 
+50
+
+Q2. Create a child class car from the vehicle class created in Que 1, which will inherit the vehicle class.
+Create a method named seating_capacity which takes capacity as an argument and returns the name of
+the vehicle and its seating capacity.
+ANS:-
+class Car(Vehicle):
+    def seating_capacity(self, capacity):
+        return f"The {self.name_of_vehicle} has a seating capacity of {capacity} people."
+car = Car("Sedan", 180, 4)
+print(car.seating_capacity(5))
+.......O/P.......
+The Sedan has a seating capacity of 5 people.
+
+Q3. What is multiple inheritance? Write a python code to demonstrate multiple inheritance.
+ANS:-
+Multiple inheritance is a feature in object-oriented programming where a class can inherit attributes and behaviors from more than one parent class. This allows a child class to inherit and combine features from multiple parent classes.
+Program:
+class Vehicle:
+    def __init__(self, name):
+        self.name = name
+
+    def get_name(self):
+        return self.name
+
+
+class Engine:
+    def __init__(self, fuel_type):
+        self.fuel_type = fuel_type
+
+    def get_fuel_type(self):
+        return self.fuel_type
+
+
+class Car(Vehicle, Engine):
+    def __init__(self, name, fuel_type, color):
+        Vehicle.__init__(self, name)
+        Engine.__init__(self, fuel_type)
+        self.color = color
+
+    def display_info(self):
+        print(f"Car Name: {self.get_name()}")
+        print(f"Fuel Type: {self.get_fuel_type()}")
+        print(f"Color: {self.color}")
+..........o/p..........
+
+car = Car("Sedan", "Petrol", "Red")
+car.display_info()
+
+Car Name: Sedan
+Fuel Type: Petrol
+Color: Red
+
+Q4. What are getter and setter in python? Create a class and create a getter and a setter method in this
+class.
+ans:
+getters and setters are methods used to access and modify the values of class attributes, respectively. They provide a way to control the access and modification of attribute values and can include additional logic or validation if needed.
+program
+class Person:
+    def __init__(self, name):
+        self._name = name
+
+    def get_name(self):
+        return self._name
+
+    def set_name(self, new_name):
+        self._name = new_name
+person = Person("Alice")
+print(person.get_name())     
+
+person.set_name("Bob")
+print(person.get_name())      Bob
+.............o/p...........
+ Alice
+Bob
+
+Q5.What is method overriding in python? Write a python code to demonstrate method overriding.
+ans:
+Method overriding is a feature in object-oriented programming where a subclass provides a different implementation of a method that is already defined in its parent class. This allows the subclass to customize or extend the behavior of the inherited method.
+
+code:-
+class Animal:
+    def make_sound(self):
+        print("Animal makes a sound.")
+
+
+class Dog(Animal):
+    def make_sound(self):
+        print("Dog barks.")
+
+
+class Cat(Animal):
+    def make_sound(self):
+        print("Cat meows.")
+
+
+animal = Animal()
+animal.make_sound() 
+
+dog = Dog()
+dog.make_sound()  
+
+cat = Cat()
+cat.make_sound()  
+.......o/p.......
+Animal makes a sound.
+Dog barks.
+Cat meows.
+
+
