@@ -1,0 +1,134 @@
+
+Q1. What is Abstraction in OOps? Explain with an example.
+ans:- In object-oriented programming (OOP), abstraction refers to the concept of simplifying complex systems by breaking them down into smaller, more manageable units called objects. Abstraction allows us to focus on the essential characteristics and behavior of an object while hiding unnecessary details.
+example:
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def calculate_area(self):
+        pass
+
+    @abstractmethod
+    def calculate_perimeter(self):
+        pass
+
+class Rectangle(Shape):
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def calculate_area(self):
+        return self.length * self.width
+
+    def calculate_perimeter(self):
+        return 2 * (self.length + self.width)
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def calculate_area(self):
+        return 3.14 * (self.radius ** 2)
+
+    def calculate_perimeter(self):
+        return 2 * 3.14 * self.radius
+
+
+Q2. Differentiate between Abstraction and Encapsulation. Explain with an example.
+
+ans:
+Abstraction:
+
+Abstraction focuses on hiding unnecessary details and complexity, allowing us to represent the essential features of an object.
+It involves creating abstract classes or interfaces that define common properties and behaviors for a group of objects.
+Abstraction allows us to work at a higher level of understanding, dealing with the general concepts rather than specific implementation details.
+
+example:
+from abc import ABC, abstractmethod
+
+class Account(ABC):
+    def __init__(self, account_number, balance):
+        self.account_number = account_number
+        self.balance = balance
+
+    @abstractmethod
+    def deposit(self, amount):
+        pass
+
+    @abstractmethod
+    def withdraw(self, amount):
+        pass
+
+class SavingsAccount(Account):
+    def deposit(self, amount):
+        self.balance += amount
+
+    def withdraw(self, amount):
+        if self.balance >= amount:
+            self.balance -= amount
+        else:
+            print("Insufficient funds.")
+
+class CheckingAccount(Account):
+    def deposit(self, amount):
+        self.balance += amount
+
+    def withdraw(self, amount):
+        if self.balance >= amount:
+            self.balance -= amount
+        else:
+            print("Insufficient funds.")
+
+Encapsulation:
+
+Encapsulation focuses on bundling data and methods into a single unit, known as a class, and controlling access to that unit.
+It involves hiding the internal implementation details of an object and providing a public interface to interact with the object.
+Encapsulation helps in data hiding, data protection, and better organization of code.
+example:
+class BankCustomer:
+    def __init__(self, name, address):
+        self.__name = name
+        self.__address = address
+        self.__accounts = []
+
+    def get_name(self):
+        return self.__name
+
+    def set_name(self, name):
+        self.__name = name
+
+    def get_address(self):
+        return self.__address
+
+    def set_address(self, address):
+        self.__address = address
+
+    def add_account(self, account):
+        self.__accounts.append(account)
+
+    def get_accounts(self):
+        return self.__accounts
+
+
+Q3. What is abc module in python? Why is it used?
+ans:
+ the abc module stands for "Abstract Base Classes." It provides a way to define abstract classes in Python, which are classes that cannot be instantiated directly and are meant to serve as base classes for other classes.
+The abc module is used to create abstract classes and interfaces by using the ABC class as a base. Abstract classes are useful when you want to define a common interface or behavior for a group of classes without specifying the exact implementation details. They provide a blueprint for subclasses to follow.
+
+
+
+Q4. How can we achieve data abstraction?
+ans:
+Data abstraction can be achieved in object-oriented programming through the use of classes and objects. Here are some steps to achieve data abstraction:
+1.Identify the essential data and operations:
+2.Create a class
+3.Hide implementation details:
+4.Provide a public interface:
+5.Access data through methods:
+
+
+Q5. Can we create an instance of an abstract class? Explain your answer.
+ans:
+No, we cannot create an instance of an abstract class directly. 
+
