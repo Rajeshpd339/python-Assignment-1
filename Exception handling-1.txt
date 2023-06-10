@@ -1,0 +1,177 @@
+
+Q1.what is an exaception in python ? write the difference between exception and syntax erros.
+Ans:
+In Python, an exception is an error that occurs during the execution of a program. 
+the difference between exceptions and syntax errors:
+*  Syntax Errors: 
+           Syntax errors, also known as parsing errors, occur when the code violates the rules of the Python language's syntax. 
+*Exceptions: 
+        Exceptions, on the other hand, occur during the execution of a program. They are errors that happen when the code is running, indicating that something unexpected or exceptional has occurred. 
+Q2. what happens when an exception in not handled? explain with an example.
+ans:
+When an exception is not handled, it results in the termination of the program and an error message is displayed, indicating the type of exception that occurred and a traceback that shows the sequence of function calls that led to the exception.
+examle:
+def divide_numbers(a, b):
+    result = a / b
+    return result
+
+num1 = 10
+num2 = 0
+
+result = divide_numbers(num1, num2)
+print(result)
+
+ZeroDivisionError: division by zero
+Traceback (most recent call last):
+  File "example.py", line 8, in <module>
+    result = divide_numbers(num1, num2)
+  File "example.py", line 2, in divide_numbers
+    result = a / b
+ZeroDivisionError: division by zero
+
+
+
+Q3. which python statemnentd are used to catch handle exception? explain with an example.
+ans:
+To catch and handle exceptions in Python, you can use the try-except statement. The try block contains the code that might raise an exception, and the except block specifies how to handle the exception if it occurs.
+def divide_numbers(a, b):
+    try:
+        result = a / b
+        return result
+    except ZeroDivisionError:
+        print("Error: Division by zero is not allowed.")
+        return None
+
+num1 = 10
+num2 = 0
+
+result = divide_numbers(num1, num2)
+if result is not None:
+    print(result)
+
+
+Q4 explain with example
+a. try and else
+b.finally
+c.raise
+ans: a.try and else
+-In Python, you can use the else clause in conjunction with the try-except statement to specify a block of code that should be executed only if no exceptions are raised in the try block. The else block is optional and comes after all the except blocks.
+
+example:
+def divide_numbers(a, b):
+    try:
+        result = a / b
+    except ZeroDivisionError:
+        print("Error: Division by zero is not allowed.")
+    else:
+        print("The division was successful.")
+        return result
+
+num1 = 10
+num2 = 2
+
+result = divide_numbers(num1, num2)
+if result is not None:
+    print(result)
+
+b.finally:
+
+ans:
+def divide_numbers(a, b):
+    try:
+        result = a / b
+    except ZeroDivisionError:
+        print("Error: Division by zero is not allowed.")
+    else:
+        print("The division was successful.")
+        return result
+    finally:
+        print("This block always executes, whether an exception occurred or not.")
+
+num1 = 10
+num2 = 0
+
+result = divide_numbers(num1, num2)
+if result is not None:
+    print(result)
+
+c.raise
+
+def validate_age(age):
+    if age < 0:
+        raise ValueError("Age cannot be negative.")
+    elif age > 120:
+        raise ValueError("Invalid age. Are you a vampire?")
+    else:
+        print("Age is valid.")
+
+
+try:
+    age = -5
+    validate_age(age)
+except ValueError as e:
+    print(str(e))
+
+try:
+    age = 150
+    validate_age(age)
+except ValueError as e:
+    print(str(e))
+
+try:
+    age = 30
+    validate_age(age)
+except ValueError as e:
+    print(str(e))
+
+
+
+
+Q5. waht are custom exception in pyhton? why do we need custom exceptions ? explain with an examle.
+ans:
+-Custom exceptions in Python are user-defined exceptions that extend the base exception classes provided by Python. By creating custom exceptions, you can define and handle specific types of errors that are relevant to your application or domain.
+example:
+class InsufficientFundsError(Exception):
+    pass
+
+
+class BankAccount:
+    def __init__(self, balance):
+        self.balance = balance
+
+    def withdraw(self, amount):
+        if amount > self.balance:
+            raise InsufficientFundsError("Insufficient funds in the account.")
+        self.balance -= amount
+
+
+account = BankAccount(1000)
+
+try:
+    amount_to_withdraw = 1500
+    account.withdraw(amount_to_withdraw)
+except InsufficientFundsError as e:
+    print(str(e))
+
+
+Q6 create a custom exception class.use this class to handle an exception.
+ans:
+class InvalidInputError(Exception):
+    pass
+
+
+def calculate_square_root(number):
+    if number < 0:
+        raise InvalidInputError("Input cannot be negative.")
+    else:
+        return number ** 0.5
+
+
+try:
+    num = -4
+    result = calculate_square_root(num)
+    print("Square root of", num, "is", result)
+except InvalidInputError as e:
+    print("Error:", str(e))
+
+
