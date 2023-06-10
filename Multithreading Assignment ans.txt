@@ -1,0 +1,74 @@
+Q1). What is multithreading in python? Why is it used? Name the module used to handle threads in python
+Ans:
+Multithreading in Python refers to the ability of a program to execute multiple threads concurrently. A thread is a separate flow of execution within a program, allowing multiple tasks to be performed concurrently. Each thread runs independently, sharing the same memory space, and can perform its own set of instructions.
+Multithreading is used to improve the efficiency and responsiveness of a program, particularly when dealing with tasks that involve waiting for I/O operations (such as reading from or writing to a file, network communication, or user input). 
+
+Q2). Why threading module used? Write the use of the following functions
+1.activeCount()
+2.currentThread()
+3.enumerate()
+4.run()
+5.start()
+6.join()
+7. isAlive()
+ans:
+The threading module in Python is used to implement multithreading. It provides a way to create and manage threads within a Python program. 
+1. `activeCount()`: This function is used to return the number of Thread objects that are currently active (alive) and have not yet completed their execution.
+
+2. `currentThread()`: This function returns the Thread object corresponding to the current execution thread. It allows you to obtain a reference to the currently executing thread within your program.
+
+3. `enumerate()`: This function returns a list of all Thread objects currently active (alive) in the program. It provides a way to iterate over all active threads and perform operations on them.
+
+4. `run()`: This method is called when a Thread object's `start()` method is invoked. It contains the code that will be executed in the thread. You can override this method in a subclass of `Thread` to define the behavior of the thread.
+
+5. `start()`: This method is used to start the execution of a thread. It creates a new thread and calls the `run()` method of the Thread object. The `run()` method will be executed in a separate thread of control.
+
+6. `join()`: This method is used to wait for a thread to complete its execution. When a thread calls `join()` on another thread, it blocks (waits) until the other thread finishes its execution. This allows for synchronization and coordination between threads.
+
+7. `isAlive()`: This method is used to check if a thread is currently active (alive) or not. It returns `True` if the thread is still running, and `False` otherwise. It can be helpful to determine the status of a thread and make decisions based on its execution state.
+
+
+
+4. Write a python program to create two threads. Thread one must print the list of squares and thread two must print the list of cubes
+ans:
+import threading
+
+def print_squares():
+    squares = [x**2 for x in range(1, 11)]
+    for num in squares:
+        print(num)
+
+def print_cubes():
+    cubes = [x**3 for x in range(1, 11)]
+    for num in cubes:
+        print(num)
+thread1 = threading.Thread(target=print_squares)
+thread2 = threading.Thread(target=print_cubes)
+
+thread1.start()
+thread2.start()
+thread1.join()
+thread2.join()
+
+print("Done")
+
+
+5. State advantages and disadvantages of multithreading
+ans:
+advantages:
+1.Improved performance:
+2.Responsiveness and interactivity: 
+3.Resource sharing: 
+
+Disadvantage:
+1.Complexity:
+2.Synchronization overhead: 
+3.Increased resource consumption: 
+
+
+6. Explain deadlocks and race conditions.
+ans:
+deadlocks:
+Deadlock is a situation that occurs in concurrent programming when two or more threads or processes are unable to proceed because each is waiting for the other to release a resource. 
+race conditions:
+-A race condition occurs in concurrent programming when the behavior of a program depends on the relative timing or interleaving of multiple threads or processes.
