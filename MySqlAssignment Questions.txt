@@ -1,0 +1,138 @@
+Q1. What is a database? Differentiate between SQL and NoSQL databases.
+ans:-
+A database is a structured collection of data that is organized, stored, and managed in a way that allows efficient retrieval, updating, and querying of the data. Databases are used to store and manage large amounts of information for various applications and systems.
+SQL Databases:
+- Data Model: SQL databases follow a relational data model, where data is organized into tables with predefined schemas. The relationships between tables are established using primary keys and foreign keys.
+NoSQL Databases:
+- Data Model: NoSQL databases offer flexible data models, including key-value pairs, documents, columnar, and graph structures. They do not strictly enforce schemas and allow for dynamic and schema-less data.
+
+
+Q2. What is DDL? Explain why CREATE, DROP, ALTER, and TRUNCATE are used with an example.
+ans:
+DDL stands for Data Definition Language, and it is a subset of SQL used to define and manage the structure of database objects, such as tables, indexes, and constraints. DDL statements are responsible for creating, altering, and dropping these objects.
+
+CREATE: The CREATE statement is used to create new database objects, such as tables, views, indexes, or constraints. It defines the structure and characteristics of the object being created. For example:
+
+sql
+
+CREATE TABLE Customers (
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    email VARCHAR(100)
+);
+This SQL statement creates a new table called "Customers" with columns for ID, name, and email.
+
+DROP: The DROP statement is used to remove database objects, such as tables, views, indexes, or constraints. It completely eliminates the object and its associated data from the database. For example:
+
+sql
+DROP TABLE Customers;
+This SQL statement removes the "Customers" table from the database.
+
+ALTER: The ALTER statement is used to modify the structure of existing database objects. It allows you to add, modify, or delete columns, constraints, or indexes. For example:
+
+sql
+ALTER TABLE Customers
+ADD phone VARCHAR(20);
+This SQL statement adds a new column called "phone" to the "Customers" table.
+
+TRUNCATE: The TRUNCATE statement is used to remove all data from a table while keeping its structure intact. It effectively deletes all rows from the table but keeps the table itself for further use. For example:
+
+sql
+TRUNCATE TABLE Customers;
+Q3. What is DML? Explain INSERT, UPDATE, and DELETE with an example.
+ans:
+DML stands for Data Manipulation Language, which is a subset of SQL used to retrieve, modify, and delete data within the database. DML statements are responsible for manipulating the data stored in the tables.
+INSERT: The INSERT statement is used to add new rows or records into a table. It allows you to specify the values for each column or insert data from another query result. For example:
+
+sql
+INSERT INTO Customers (id, name, email)
+VALUES (1, 'John Doe', 'john@example.com');
+
+
+UPDATE: The UPDATE statement is used to modify existing data in a table. 
+UPDATE Customers
+SET email = 'johndoe@example.com'
+WHERE id = 1;
+DELETE: The DELETE statement is used to remove one or more rows from a table. 
+
+DELETE FROM Customers
+WHERE id = 1;
+
+Q4. What is DQL? Explain SELECT with an example.
+ans:
+DQL stands for Data Query Language, which is a subset of SQL used to retrieve or query data from a database. The most common and widely used DQL statement is SELECT, 
+SELECT: The SELECT statement is used to retrieve data from a table or multiple tables. 
+SELECT column1, column2
+FROM table_name
+WHERE condition;
+In this example, column1 and column2 are the names of the columns you want to retrieve from the table specified by table_name. The optional WHERE clause allows you to specify conditions that filter the results based on specific criteria.
+
+Example:
+
+Consider a table named "Employees" with columns such as "id," "name," "age," and "department." To retrieve the names and ages of employees older than 30, the SELECT statement would look like this:
+
+sql
+Copy code
+SELECT name, age
+FROM Employees
+WHERE age > 30;
+This SQL statement retrieves the "name" and "age" columns from the "Employees" table, but only for the rows where the "age" is greater than 30. The result would be a set of rows containing the names and ages of employees who meet the specified condition.
+
+The SELECT statement is highly versatile and can be expanded to include various other clauses such as ORDER BY for sorting the results, JOIN for combining data from multiple tables, GROUP BY for aggregating data, and more. It allows you to retrieve specific data based on your requirements and is the primary tool for querying and retrieving information from a database.
+SELECT column1, column2
+FROM table_name
+WHERE condition;
+
+Q5. Explain Primary Key and Foreign Key.
+ans:
+Primary Key:
+A primary key is a column or a combination of columns in a database table that uniquely identifies each row in that table. It ensures the uniqueness and integrity of the data within the table
+
+
+Q6. Write a python code to connect MySQL to python. Explain the cursor() and execute() method.
+ans:
+import mysql.connector
+
+# Establish a connection to MySQL
+connection = mysql.connector.connect(
+  host="your_host",
+  user="your_username",
+  password="your_password",
+  database="your_database"
+)
+
+# Create a cursor object
+cursor = connection.cursor()
+
+# Execute a query
+query = "SELECT * FROM your_table"
+cursor.execute(query)
+
+# Fetch and print the result
+result = cursor.fetchall()
+for row in result:
+    print(row)
+
+# Close the cursor and connection
+cursor.close()
+connection.close()
+
+Q7. Give the order of execution of SQL clauses in an SQL query.
+
+- The general order of execution of SQL clauses in an SQL query is as follows:
+
+1. SELECT: The SELECT clause is used to specify the columns or expressions to retrieve from the database.
+
+2. FROM: The FROM clause specifies the table(s) from which to retrieve the data.
+
+3. WHERE: The WHERE clause is used to filter the rows based on specific conditions. It specifies the criteria that must be met for a row to be included in the result set.
+
+4. GROUP BY: The GROUP BY clause is used to group the rows based on one or more columns. It is often used in combination with aggregate functions like SUM, COUNT, AVG, etc.
+
+5. HAVING: The HAVING clause is used to filter the groups generated by the GROUP BY clause. It specifies the conditions that must be met for a group to be included in the result set.
+
+6. ORDER BY: The ORDER BY clause is used to sort the result set based on one or more columns in ascending (default) or descending order.
+
+8. LIMIT/OFFSET: The LIMIT clause specifies the maximum number of rows to be returned in the result set. The OFFSET clause is used to skip a specified number of rows before starting to return rows.
+
+I
