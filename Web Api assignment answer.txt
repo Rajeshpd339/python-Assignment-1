@@ -1,0 +1,61 @@
+Q1. What is an API? Give an example, where an API is used in real life.
+ans:
+API stands for Application Programming Interface. It is a set of rules and protocols that allows different software applications to communicate and interact with each other. An API defines how different components of software systems should interact, specifying the methods, data formats, and protocols to be used.
+An example of an API being used in real life is the integration of social media platforms with third-party applications. Social media platforms like Facebook, Twitter, or Instagram provide APIs that allow developers to access certain functionalities and data from their platforms. Developers can use these APIs to retrieve user information, post content, interact with social features, and more.
+
+Q2. Give advantages and disadvantages of using API.
+Advantages of using APIs:
+1.Modularity and Reusability: APIs promote modular development by allowing developers to create independent components that can be reused in multiple applications.
+2.Encapsulation and Abstraction: APIs encapsulate complex functionality behind a simplified interface, providing an abstraction layer. 
+3.Seamless Integration: APIs facilitate integration between different software systems, enabling them to exchange data and communicate effectively. 
+Disadvantages of using APIs:
+ans:
+1. Dependency and Versioning: When relying on external APIs, applications become dependent on the stability and availability of those APIs. Changes or deprecations in API versions can require updates in the application code and may introduce compatibility issues.
+
+2. Performance and Reliability: External API calls introduce network latency and potential points of failure. Applications relying heavily on external APIs need to consider the performance and reliability of those APIs to ensure a smooth user experience.
+
+3. Security and Privacy: Integrating with external APIs introduces potential security risks. APIs need to be secured and authenticated properly to prevent unauthorized access or data breaches. Additionally, when using third-party APIs, there may be concerns about the privacy and security of the data being transmitted.
+
+4. Lack of Control: When using external APIs, you rely on the provider to maintain and update the functionality. Changes or limitations imposed by the API provider can impact the functionality or availability of your application.
+Q3. What is a Web API? Differentiate between API and Web API.
+ans:
+A Web API (Web Application Programming Interface) is a specific type of API that is designed to enable communication and interaction between web-based systems or applications. It allows web applications to request and exchange data with external systems or services over the internet using standard web protocols such as HTTP (Hypertext Transfer Protocol).
+
+API:
+
+API (Application Programming Interface) is a general term that refers to a set of rules, protocols, and tools that enable different software components to communicate and interact with each other.
+APIs can be used in various contexts, including desktop applications, mobile apps, operating systems, libraries, databases, and more.
+APIs can be implemented using different protocols and technologies, such as HTTP, REST, SOAP, RPC, or even function-based interfaces.
+Web API:
+
+Web API specifically refers to APIs designed for web-based systems, allowing web applications to interact with external services or systems over the internet.
+Web APIs typically use standard web protocols, such as HTTP, and adhere to principles of REST (Representational State Transfer) architecture.
+Web APIs are commonly used to access and manipulate data from databases, retrieve information from third-party services (e.g., social media platforms), or provide functionality to external developers for integration.
+
+Q4. Explain REST and SOAP Architecture. Mention shortcomings of SOAP.
+ans:
+REST (Representational State Transfer) and SOAP (Simple Object Access Protocol) are two different architectural styles used in web services for communication between systems. 
+REST (Representational State Transfer):
+
+REST is an architectural style that emphasizes a stateless, client-server communication model over the internet.
+It relies on standard HTTP methods (GET, POST, PUT, DELETE) to perform operations on resources identified by URLs (Uniform Resource Locators).
+REST APIs use plain text formats, such as JSON (JavaScript Object Notation) or XML (eXtensible Markup Language), for data exchange.
+
+SOAP (Simple Object Access Protocol):
+
+SOAP is a protocol specification that defines a messaging framework for exchanging structured information in web services.
+It encapsulates data in XML format and transmits it using various protocols, including HTTP, SMTP, or others.
+SOAP APIs often use the XML-based Web Services Description Language (WSDL) for defining the operations, messages, and service endpoints.
+
+
+Q5. Differentiate between REST and SOAP.
+ans:
+1.Architecture:
+REST: REST is an architectural style that follows a stateless, client-server communication model. It leverages standard HTTP methods (GET, POST, PUT, DELETE) and uses URLs (Uniform Resource Locators) to identify and manipulate resources. REST is based on the principles of scalability, simplicity, and interoperability.
+SOAP: SOAP, on the other hand, is a protocol specification that defines a messaging framework for exchanging structured information in web services. It relies on XML-based messages and can use various protocols for transmission, including HTTP, SMTP, or others. SOAP is designed for more complex distributed computing scenarios.
+2.Messaging Format:
+REST: REST APIs commonly use plain text formats such as JSON (JavaScript Object Notation) or XML (eXtensible Markup Language) for data exchange. JSON is preferred due to its simplicity and compatibility with JavaScript.
+SOAP: SOAP messages are formatted in XML, which provides a more structured and explicit representation of data. XML allows for strong typing and supports complex data structures.
+3.Transport:
+REST: REST primarily utilizes the HTTP protocol for communication, leveraging its built-in methods and status codes. It relies on the basic request-response model for interactions, making use of HTTP headers for additional information.
+SOAP: SOAP can use different protocols for transport, including HTTP, SMTP, or others. It adds a SOAP envelope to the XML message, which contains information about the message and facilitates communication with various network protocols.
