@@ -1,0 +1,99 @@
+Q1. What is MongoDB? Explain non-relational databases in short. In which scenarios it is preferred to use
+MongoDB over SQL databases?
+ans:
+MongoDB is a popular document-oriented database that falls under the category of non-relational or NoSQL databases. Non-relational databases are designed to store and retrieve data without using traditional SQL-based relationships and schemas. Here's a short explanation of non-relational databases:
+Non-relational databases, also known as NoSQL databases, provide a flexible and scalable approach to data storage. Unlike traditional SQL databases, they don't rely on fixed table schemas and relationships between tables.
+Non-relational databases offer several advantages in certain scenarios:
+1.Flexible schema: 
+2.Scalability and performance: 
+3.Rapid development:
+
+MongoDB is preferred over SQL databases:
+1.Unstructured or evolving data:
+2.Large-scale applications:
+3.Real-time analytics:
+4.Agile development:
+5.High Availability and Replication:
+
+
+Q2. State and Explain the features of MongoDB.
+ans:
+main features:
+1.Document-Oriented: MongoDB is a document-oriented database, which means it stores and retrieves data in flexible, JSON-like documents called BSON (Binary JSON).
+2.Flexible Schema: MongoDB's flexible schema enables developers to store and modify data structures dynamically. 
+3.Scalability and High Performance: MongoDB is designed to scale horizontally by distributing data across multiple servers or clusters. It offers automatic sharding
+4.Indexing and Querying: MongoDB provides various indexing techniques, including primary key indexes, compound indexes, and geospatial indexes. 
+5.Ad Hoc Queries: MongoDB supports ad hoc queries, allowing developers to perform dynamic and on-the-fly queries against the data. 
+
+Q3. Write a code to connect MongoDB to Python. Also, create a database and a collection in MongoDB.
+ans:
+from pymongo import MongoClient
+client = MongoClient('mongodb://localhost:27017')
+database = client['mydatabase']
+collection = database['mycollection']
+document = {"name": "John Doe", "age": 30}
+inserted_document = collection.insert_one(document)
+retrieved_document = collection.find_one({"_id": inserted_document.inserted_id})
+print(retrieved_document)
+
+
+Q4. Using the database and the collection created in question number 3, write a code to insert one record,
+and insert many records. Use the find() and find_one() methods to print the inserted record.
+from pymongo import MongoClient
+ans: 
+client = MongoClient('mongodb://localhost:27017')
+database = client['mydatabase']
+collection = database['mycollection']
+document_one = {"name": "Alice", "age": 25}
+inserted_one = collection.insert_one(document_one)
+print("Inserted Document:")
+print(collection.find_one({"_id": inserted_one.inserted_id}))
+
+# Insert multiple records
+documents_many = [
+    {"name": "Bob", "age": 30},
+    {"name": "Charlie", "age": 35},
+    {"name": "David", "age": 40}
+]
+inserted_many = collection.insert_many(documents_many)
+print("\nInserted Documents:")
+for doc_id in inserted_many.inserted_ids:
+    print(collection.find_one({"_id": doc_id}))
+
+Q5. Explain how you can use the find() method to query the MongoDB database. Write a simple code to
+demonstrate this.
+ans:
+
+from pymongo import MongoClient
+client = MongoClient('mongodb://localhost:27017')
+database = client['mydatabase']
+collection = database['mycollection']
+query = {"age": {"$gt": 30}}  
+cursor = collection.find(query)
+
+# Process the matching documents
+print("Matching Documents:")
+for document in cursor:
+    print(document)
+
+Q6. Explain the sort() method. Give an example to demonstrate sorting in MongoDB.
+ans:
+from pymongo import MongoClient
+client = MongoClient('mongodb://localhost:27017')
+database = client['mydatabase']
+collection = database['mycollection']
+query = {"age": {"$gt": 30}}  
+cursor = collection.find(query).sort("age", -1)  # Sorting by age field in descending order
+print("Sorted Documents:")
+for document in cursor:
+    print(document)
+
+
+Q7. Explain why delete_one(), delete_many(), and drop() is used.
+ANS:
+delete_one(): This method is used to delete a single document that matches a specific filter/query. It is useful when you want to remove a particular document from a collection. For example, if you have a unique identifier for the document or need to delete a specific record, you can use delete_one() to remove it.
+
+delete_many(): This method is used to delete multiple documents that match a specific filter/query. It allows you to remove multiple documents that satisfy certain criteria at once. For instance, if you want to delete all documents with a particular field value or those that match a specific condition, you can use delete_many().
+
+drop(): This method is used to drop an entire collection from the database. Dropping a collection permanently removes it, along with all its documents, from the database. It is typically used when you want to remove an entire collection and its associated data. Dropping a collection can be useful when you no longer need the data or want to start fresh with an empty collection.
+
