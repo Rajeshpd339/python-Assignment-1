@@ -1,0 +1,60 @@
+Q1. Explain GET and POST methods.
+ans:
+In Flask, you can handle GET and POST requests using the @app.route decorator and specifying the allowed methods within square brackets. Here's an explanation of how GET and POST methods can be used in Flask:
+
+GET Method:
+To handle a GET request in Flask, you can use the methods parameter of the @app.route decorator and specify 'GET' as the allowed method. This means that the route will only be triggered when a GET request is made to that URL.
+
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/hello', methods=['GET'])
+def hello():
+    return 'Hello, GET request!'
+
+if __name__ == '__main__':
+    app.run()
+
+POST Method:
+To handle a POST request in Flask, you need to include 'POST' in the methods parameter of the @app.route decorator. This allows the route to be triggered when a POST request is made to the specified URL.
+from flask import Flask, request
+
+app = Flask(__name__)
+
+@app.route('/submit', methods=['POST'])
+def submit():
+    name = request.form.get('name')
+    return f'Thank you, {name}, for submitting the form!'
+
+if __name__ == '__main__':
+    app.run()
+
+
+Q2. Why is request used in Flask?
+ans:
+The request object in Flask is a global object that represents the HTTP request made by the client to the server. It provides access to various properties and data associated with the request, allowing you to retrieve information such as form data, query parameters, headers, and more. Here are some reasons why the request object is used in Flask:
+1.Accessing Form Data: 
+2.Query Parameters:
+3.Request Headers:
+4.File Uploads:
+
+
+Q3. Why is redirect() used in Flask?
+ans:The redirect() function in Flask is used to redirect the client's web browser to a different URL. It is a helpful tool for controlling the flow of the application and guiding the user to another page or endpoint. Here are some reasons why the redirect() function is used in Flask:
+Page Redirection: When a user performs a certain action or accesses a specific URL, you may want to redirect them to a different page within your application. The redirect() function allows you to specify the target URL and automatically redirects the user's browser to that location.
+
+Handling Form Submissions: After processing a form submission, you might want to redirect the user to a different page to display a success message or provide further instructions. By redirecting the user after form submission, you can prevent issues with resubmission when the user refreshes the page.
+
+Route Navigation: In some cases, you may want to navigate the user to a different endpoint or route within your Flask application based on certain conditions. The redirect() function enables you to dynamically redirect the user to different parts of your application's logic.
+
+Q4. What are templates in Flask? Why is the render_template() function used?
+ans:
+n Flask, templates are used to separate the presentation logic (HTML) from the application logic (Python code). Templates allow you to create dynamic HTML pages by inserting data or performing logic within the templates. Flask uses the Jinja2 template engine, which provides a powerful and flexible way to generate dynamic content.
+Dynamic HTML Generation: With the render_template() function, you can generate HTML pages dynamically by embedding Python code and placeholders (template variables) within your templates. This allows you to display dynamic content, perform conditional rendering, and iterate over data structures within the HTML.
+
+Separation of Concerns: Templates help separate the presentation logic (HTML) from the application logic (Python code). This separation improves code organization, maintainability, and reusability by keeping the design and functionality separate.
+
+Template Inheritance: Flask templates support inheritance, which allows you to define a base template with common elements (header, footer, etc.) and then extend or override specific sections in child templates. This concept helps in code reuse and maintaining consistent layouts across multiple pages.
+
+Q5. Create a simple API. Use Postman to test it. Attach the screenshot of the output in the Jupyter Notebook.
