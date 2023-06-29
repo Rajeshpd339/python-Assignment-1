@@ -1,0 +1,50 @@
+Q1. What is Web Scraping? Why is it Used? Give three areas where Web Scraping is used to get data.
+ans:
+
+Web scraping is the process of extracting data from websites. It involves automatically retrieving information from web pages, parsing the HTML or XML structure of the page, and extracting the desired data for further analysis or use. Web scraping allows users to gather data from multiple sources on the internet in a structured and efficient manner.
+Web scraping is used for various purposes, including:
+1.Data Collection and Research: 
+2.Business Intelligence: 
+3.Price Monitoring and Comparison:
+4.Content Aggregation: 
+5.Financial Data Analysis:
+6.Social Media Monitoring:
+
+Q2. What are the different methods used for Web Scraping?
+ans:
+There are several methods used for web scraping, depending on the complexity of the task and the tools available. Here are some common methods:
+1.Manual Copy-Pasting: This is the simplest form of web scraping, where data is manually copied and pasted from web pages into a local file or spreadsheet. 
+2.Regular Expressions (Regex): Regular expressions are used to search and extract specific patterns of text from HTML source code.
+3.HTML Parsing: HTML parsing involves using programming languages or libraries to parse the HTML structure of a web page and extract relevant data.
+4.Web Scraping Frameworks: There are several web scraping frameworks and tools available that provide higher-level abstractions and functionalities to simplify the scraping process. 
+5.Headless Browsers: Headless browsers, such as Puppeteer (JavaScript) or Selenium (multiple languages), simulate web browsers without a user interface.
+6.APIs: Some websites provide APIs (Application Programming Interfaces) that allow developers to access and retrieve data in a structured manner. 
+7.Reverse Engineering APIs: In cases where APIs are not available or limited in functionality, reverse engineering techniques can be used to understand how a website's internal API works.
+
+
+Q3. What is Beautiful Soup? Why is it used?
+ans:
+Beautiful Soup is a popular Python library used for web scraping and parsing HTML or XML documents. It provides a convenient and intuitive way to extract data from web pages by navigating and manipulating the HTML or XML structure.
+1.HTML Parsing: Beautiful Soup simplifies the process of parsing HTML documents. It can handle imperfect or malformed HTML code and still extract the relevant data effectively.
+2.Data Extraction: Beautiful Soup provides a variety of methods and functions to search, filter, and extract specific elements or data from HTML documents.
+3.Traversing the Document Tree: Beautiful Soup allows developers to navigate the HTML document tree using intuitive methods like accessing parent, sibling, or child elements.
+4.Handling Complex HTML Structures: Web pages often have complex HTML structures with nested tags and various attributes. Beautiful Soup provides powerful features to handle such complexities.
+5.Integration with Other Libraries: Beautiful Soup can be used in conjunction with other Python libraries, such as requests for making HTTP requests, or pandas for data manipulation and analysis.
+6.Robustness and Community Support: Beautiful Soup is a mature and widely used library with a strong and active community. It is well-documented, and developers can find extensive resources, tutorials, and examples online. 
+
+Q4. Why is flask used in this Web Scraping project?
+ans:Flask is a lightweight and flexible web framework for Python, and it can be used in a web scraping project for several reasons:
+1.Web Interface: Flask allows you to create a web interface or API for your web scraping project. It provides the necessary tools to handle HTTP requests, define routes, and render HTML templates. 
+2.Data Presentation: Flask enables you to present the scraped data in a visually appealing and organized manner. 
+3.User Interaction: Flask allows you to implement interactive features in your web scraping project.
+4.Authentication and Authorization: If your web scraping project requires authentication or authorization, Flask provides mechanisms to handle user sessions, user login/logout, and access control.
+5.API Development: Flask can be used to build a RESTful API for your web scraping project. 
+6.Integration with Other Libraries: Flask integrates well with other Python libraries commonly used in web scraping projects, such as Beautiful Soup for parsing HTML or XML and requests for making HTTP requests.
+
+
+Q5. Write the names of AWS services used in this project. Also, explain the use of each service.
+ans:
+In a web scraping project hosted on AWS (Amazon Web Services), several services can be utilized to create a scalable and reliable infrastructure. Here are some AWS services that could be used and their respective purposes:
+1.Bean stack
+2.piplines
+
